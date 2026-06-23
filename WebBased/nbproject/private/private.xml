@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/web/studentDashboard.jsp</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/src/java/dao/NotificationDAO.java</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/web/login.jsp</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/web/index.jsp</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/src/java/model/Notification.java</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/web/style.css</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/web/register.jsp</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/src/java/controller/RegisterServlet.java</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/web/adminDashboard.jsp</file>
+            <file>file:/C:/Web-Based/SiswaPostSystem/WebBased/src/java/controller/NotificationServlet.java</file>
+        </group>
+    </open-files>
+</project-private>

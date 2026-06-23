@@ -1,0 +1,956 @@
+/* ==========================================================================
+   SISWAPOST - COMPLETE & CONSISTENT STYLESHEET
+   ========================================================================== */
+
+/* ============================
+   1. GLOBAL RESET & BASE
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* ============================
+   2. SIDEBAR COMPONENT
+   ============================ */
+.sidebar {
+    width: 260px;
+    background-color: #1e3a61;
+    color: white;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-brand-wrapper {
+    padding: 0 24px;
+    margin-bottom: 32px;
+}
+
+.sidebar-brand-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.sidebar-brand-sub {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-left: 2px;
+    margin-top: -2px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+    padding: 0 12px;
+}
+
+.sidebar-item a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.sidebar-item a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-item.active a {
+    color: #ffffff;
+    background-color: #152944;
+    border-left: 4px solid #ffffff;
+    padding-left: 16px;
+}
+
+.logout-btn {
+    margin: 12px 12px 0 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: auto;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================
+   3. MAIN CONTENT & TOP NAVBAR
+   ============================ */
+.main-container {
+    flex-grow: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+.top-navbar {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 40px;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.top-navbar span {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.top-navbar strong {
+    color: #1e3a61;
+}
+
+.main-content {
+    padding: 32px 40px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+/* ============================
+   4. PAGE TITLES
+   ============================ */
+.page-title-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e3a61;
+    margin-bottom: 4px;
+}
+
+.page-subtitle-text {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+}
+
+/* ============================
+   5. FILTER & ACTION ROW
+   ============================ */
+.filter-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    background: white;
+    padding: 16px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: white;
+    flex: 1;
+    min-width: 200px;
+    transition: border-color 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+    border-color: #1e3a61;
+    box-shadow: 0 0 0 3px rgba(30, 58, 97, 0.08);
+}
+
+.search-input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+    background: transparent;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.status-dropdown {
+    padding: 8px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.status-dropdown:focus {
+    border-color: #1e3a61;
+}
+
+/* ============================
+   6. DATA SECTION / TABLE
+   ============================ */
+.data-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+}
+
+.section-header-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.stats-counter-badge-row {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.stats-counter-badge-row strong {
+    color: #1e293b;
+    margin-right: 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+thead th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* User Info Cell (Avatar + Name) */
+.user-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.avatar-initials-circle {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #1e3a61, #2d4a7a);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* ============================
+   7. BUTTONS
+   ============================ */
+.primary-btn {
+    background-color: #1e3a61;
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.primary-btn:hover {
+    background-color: #152944;
+    opacity: 1;
+}
+
+.primary-btn-secondary {
+    background-color: #e2e8f0;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.primary-btn-secondary:hover {
+    background-color: #f1f5f9;
+    opacity: 1;
+}
+
+.modal-btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.submit-btn-blue {
+    background-color: #1e3a61;
+    color: white;
+}
+
+.submit-btn-blue:hover {
+    background-color: #152944;
+}
+
+.submit-btn-danger {
+    background-color: #dc2626;
+    color: white;
+}
+
+.submit-btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+/* ============================
+   8. BADGES / STATUS LABELS
+   ============================ */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: inline-block;
+}
+
+.badge-active {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.badge-inactive {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+.badge-warning {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.badge-danger {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.badge-info {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
+/* ============================
+   9. ACTIONS CELL (Icons)
+   ============================ */
+.actions-cell {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.actions-cell a {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.actions-cell a:hover {
+    background: #f1f5f9;
+    opacity: 1;
+}
+
+/* ============================
+   10. MODAL SYSTEM
+   ============================ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(30, 58, 97, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-card h3 {
+    font-size: 1.3rem;
+    color: #1e3a61;
+    margin-bottom: 20px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.modal-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-input-group label {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.modal-input-group input,
+.modal-input-group select,
+.modal-input-group textarea {
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.modal-input-group input:focus,
+.modal-input-group select:focus,
+.modal-input-group textarea:focus {
+    border-color: #1e3a61;
+    box-shadow: 0 0 0 3px rgba(30, 58, 97, 0.08);
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.modal-footer-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ============================
+   11. LOGIN / REGISTER PAGES
+   ============================ */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    padding: 20px;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 40px 44px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #e2e8f0;
+}
+
+.login-card h2 {
+    color: #1e3a61;
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.login-card .input-group {
+    margin-bottom: 18px;
+}
+
+.login-card .input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.login-card .input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-card .input-group input:focus {
+    border-color: #1e3a61;
+    box-shadow: 0 0 0 3px rgba(30, 58, 97, 0.08);
+}
+
+.login-card .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e3a61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+}
+
+.login-card .submit-btn:hover {
+    background-color: #152944;
+}
+
+.login-link-container {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.login-link-container a {
+    color: #1e3a61;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.login-link-container a:hover {
+    opacity: 0.8;
+}
+
+/* ============================
+   12. INDEX / HERO PAGE
+   ============================ */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    padding: 20px;
+}
+
+.hero-card {
+    background: white;
+    padding: 50px 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+}
+
+.hero-card h1 {
+    color: #1e3a61;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.hero-card p {
+    color: #64748b;
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-main {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.btn-login {
+    background-color: #1e3a61;
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #152944;
+    opacity: 1;
+}
+
+.btn-register {
+    background-color: #ffffff;
+    color: #1e3a61;
+    border: 1px solid #1e3a61;
+}
+
+.btn-register:hover {
+    background-color: #f1f5f9;
+    opacity: 1;
+}
+
+/* ============================
+   13. ERROR / SUCCESS MESSAGES
+   ============================ */
+.error-msg {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid #fecaca;
+}
+
+.success-msg {
+    color: #16a34a;
+    background: #dcfce7;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid #bbf7d0;
+}
+
+/* ============================
+   14. TABS
+   ============================ */
+.tabs-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #e2e8f0;
+    color: #64748b;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background: #1e3a61;
+    color: #ffffff;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #cbd5e1;
+}
+
+/* ============================
+   15. EMPTY STATE
+   ============================ */
+.empty-state {
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #94a3b8;
+    background: #ffffff;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* ============================
+   16. DASHBOARD CARDS / STATS
+   ============================ */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.stat-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card h3 {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a61;
+}
+
+/* ============================
+   17. RESPONSIVE
+   ============================ */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    .main-container {
+        margin-left: 220px;
+    }
+    .main-content {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+    }
+    .sidebar-brand-wrapper {
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 4px;
+    }
+    .sidebar-item a {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    .sidebar-item.active a {
+        padding-left: 14px;
+    }
+    .logout-btn {
+        margin: 0;
+        padding: 8px 14px;
+        width: auto;
+    }
+    .main-container {
+        margin-left: 0;
+    }
+    .top-navbar {
+        padding: 0 20px;
+        height: 60px;
+    }
+    .main-content {
+        padding: 16px 20px;
+    }
+    .login-card {
+        padding: 28px 24px;
+    }
+    .hero-card {
+        padding: 30px 24px;
+    }
+    .modal-card {
+        padding: 24px;
+        margin: 16px;
+    }
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    .filter-action-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-input-wrapper {
+        width: 100%;
+    }
+    table {
+        font-size: 0.85rem;
+    }
+    thead th, tbody td {
+        padding: 8px 12px;
+    }
+    .actions-cell {
+        gap: 8px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .sidebar-menu {
+        flex-direction: column;
+    }
+    .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn-main {
+        text-align: center;
+    }
+    .stats-counter-badge-row {
+        font-size: 0.8rem;
+    }
+    .section-header-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
